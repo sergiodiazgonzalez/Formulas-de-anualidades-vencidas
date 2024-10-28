@@ -91,11 +91,21 @@ Se realizan los cálculos
 ValorFuturo=83724.03661
 Anualidad=1200
 NumeroDeAnualidades=60
-# Calculamos el la tasa del periodo
+# Calculamos la tasa del periodo
 r=TasaDelPeriodoValorFuturo(VF=ValorFuturo,A=Anualidad,t=NumeroDeAnualidades)
 # Imprimimos el resultado
 r
 ```
-
-
-
+## Cálculo de Tasa del periodo con valor actual
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: VA=$6090.83 A=$1200 t=6
+Se realizan los cálculos
+```{r}
+# Creamos objetos con los valores de entradad:
+ValorActual=6090.83
+Anualidad=1200
+NumeroDeAnualidades=6
+# Calculamos la tasa del periodo
+r=TasaDelPeriodoValorActual(VA=ValorActual,A=Anualidad,t=NumeroDeAnualidades)
+# Imprimimos el resultado
+r
+```
