@@ -3,7 +3,7 @@ Las anualidades donde los pagos se realizan al final de cada período de pago se
 ```{r}
 source("https://raw.githubusercontent.com/sergiodiazgonzalez/Formulas-de-anualidades-vencidas/refs/heads/main/AnualidadesVencidas.R")
 ```
-### Cálculo de Valor futuro
+## Cálculo de Valor futuro
 Para ilustrar el ejemplo, se tiene el siguiente ejercicio: A=$3,000 t=8 r=0.05
 Se realizan los cálculos
 ```{r}
