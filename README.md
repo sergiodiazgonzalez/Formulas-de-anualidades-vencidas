@@ -1,4 +1,5 @@
 # Formulas-de-anualidades-vencidas
+Las anualidades donde los pagos se realizan al final de cada período de pago se llaman anuaidades vecidas y su monto es el valor acumulado de una suceción de pagos iguales al final de cada pago
 ```
 source("https://raw.githubusercontent.com/sergiodiazgonzalez/Formulas-de-anualidades-vencidas/refs/heads/main/anualidadesVencidas.R")
 ```
