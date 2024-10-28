@@ -3,7 +3,7 @@ Las anualidades donde los pagos se realizan al final de cada período de pago se
 ```{r}
 source("https://raw.githubusercontent.com/sergiodiazgonzalez/Formulas-de-anualidades-vencidas/refs/heads/main/AnualidadesVencidas.R")
 ```
-## Cálculo de Valor futuro
+## Cálculo de valor futuro
 Para ilustrar el ejemplo, se tiene el siguiente ejercicio: A=$3,000 t=8 r=0.05
 Se realizan los cálculos
 ```{r}
@@ -30,7 +30,7 @@ A=AnualidadValorFuturo(VF=ValorFuturo,t=NumeroDeAnualidades,r=TasaDeIntereses)
 A
 ```
 ## Cálculo de Número de Pagos a plazo con valor futuro
-Para ilistrar el ejemplo, se tiene el siguiente ejercicio: VF=$40,000 A=$2,000 r=0.03
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: VF=$40,000 A=$2,000 r=0.03
 Se realizan los cálculos
 ```{r}
 # Creamos objetos con los valores de entrada:
@@ -42,34 +42,18 @@ t=NumeroDePagosValorFuturo(VF=ValorFuturo,A=Anualidad,r=TasaDeIntereses)
 #Imprimimos el resultado:
 t
 ```
-
-# 4. Tasa de interés (i) conociendo el valor futuro (FV), número de pagos (n) y la anualidad (A)
-tasa_futuro <- function(FV, A, n) {
-  func <- function(i) {
-    FV - A * (((1 + i)^n - 1) / i)
-  }
-  
-  # Verifica que los límites del intervalo sean válidos (función cambia de signo)
-  lower <- 0.0001  # Evitar división por cero en el límite inferior
-  upper <- 1
-  f.lower <- func(lower)
-  f.upper <- func(upper)
-  
-  if (is.na(f.lower) || is.na(f.upper)) {
-    stop("No se puede calcular en el intervalo dado.")
-  }
-  
-  # Usar uniroot solo si los signos son diferentes
-  if (f.lower * f.upper > 0) {
-    stop("La función no cambia de signo en el intervalo dado.")
-  }
-  
-  i <- uniroot(func, c(lower, upper))$root
-  return(i)
-}
-# Ejemplo
-```
-i = tasa_futuro(15000, 1000, 10)
+## Cálculo de valor actual
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: A=$1,200 t=6 r=0.05
+Se realizan los cálculos
+```{r}
+# Creamos objetos con los valores de entrada:
+Anualidad=1200
+NumeroDeAnualidades=6
+TasaDeIntereses=0.05
+# Calculamos el valor actual
+VA=ValorActual(A=Anualidad,t=NumeroDeAnualidades,r=TasaDeIntereses)
+#Imprimimos el resultado:
+VA
 ```
 
 # 5. Valor actual (VA) conociendo la anualidad (A), tasa de interés (i) y número de pagos (n)
