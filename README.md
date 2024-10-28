@@ -12,7 +12,7 @@ Anualidad=3000
 NumeroDeAnualidades=8
 TasaDeInteres=0.05
 # Calculamos el valor futuro
-VF=ValorFuturo(A=Anualidad,t=NumeroDeAnualidades,r=TasaDeIntereses)
+VF=ValorFuturo(A=Anualidad,t=NumeroDeAnualidades,r=TasaDeInteres)
 #Imprimimos el resultado:
 VF
 ```
