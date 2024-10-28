@@ -69,17 +69,19 @@ A=AnualidadValorActual(VA=ValorActual,t=NumeroDeAnualidades,r=TasaDeIntereses)
 A
 ```
 
-# 6. Anualidad (A) conociendo el valor actual (VA), tasa de interés (i) y número de pagos (n)
-anualidad_actual = function(PV, i, n) {
-  A = (VA * i) / (1 - (1 + i)^(-n))
-  return(A)
-}
-
-# Ejemplo
+## Cálculo de número de Pagos a plazo con valor actual
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: VA=$8,000 A=$1,500 r=0.06
+Se realizan los cálculos
+```{r}
+# Creamos objetos con los valores de entrada:
+ValorActual=8000
+Anualidad=1500
+TasaDeIntereses=0.06
+# Calculamos el número de pagos
+t=NumeroDePagosValorActual(VA=ValorActual,A=Anualidad,r=TasadeIntereses)
+#Imprimimos el resultado:
+t
 ```
-A = anualidad_actual(10000, 0.05, 10)
-```
-
 
 # 7. Número de pagos (n) conociendo el valor actual (PV), anualidad (A) y la tasa de interés (i)
 numero_pagos_actual = function(PV, A, i) {
