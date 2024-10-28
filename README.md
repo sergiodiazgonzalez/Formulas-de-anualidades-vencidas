@@ -1,7 +1,7 @@
 # Formulas-de-anualidades-vencidas
 Las anualidades donde los pagos se realizan al final de cada período de pago se llaman anuaidades vecidas y su monto es el valor acumulado de una suceción de pagos iguales al final de cada pago.
 ```{r}
-source("https://raw.githubusercontent.com/sergiodiazgonzalez/Formulas-de-anualidades-vencidas/refs/heads/main/AnualidadesVencidas.R")
+source("https://raw.githubusercontent.com/sergiodiazgonzalez/Formulas-de-anualidades-vencidas/refs/heads/main/AnualidadesVencidas1.R")
 ```
 ## Cálculo de valor futuro
 Para ilustrar el ejemplo, se tiene el siguiente ejercicio: A=$3,000 t=8 r=0.05
@@ -83,44 +83,19 @@ t=NumeroDePagosValorActual(VA=ValorActual,A=Anualidad,r=TasaDeIntereses)
 t
 ```
 
-# 7. Número de pagos (n) conociendo el valor actual (PV), anualidad (A) y la tasa de interés (i)
-numero_pagos_actual = function(PV, A, i) {
-  n = log(A / (A - PV * i)) / log(1 + i)
-  return(n)
-}
-
-# Ejemplo
+## Cálculo de Tasa del periodo con valor futuro
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: VF=$83,724.03661 A=$1,200 t=60
+Se realizan los cálculos 
+```{r}
+# Creamos objetos con los valores de entrada:
+ValorFuturo=83724.03661
+Anualidad=1200
+NumeroDeAnualidades=60
+# Calculamos el la tasa del periodo
+r=TasaDelPeriodoValorFuturo(VF=ValorFuturo,A=Anualidad,t=NumeroDeAnualidades)
+# Imprimimos el resultado
+r
 ```
-n = numero_pagos_actual(10000, 1000, 0.05)
-```
 
 
-# 8 Tasa de interés (i) conociendo el valor actual (VA), número de pagos (n) y la anualidad (A)
-tasa_actual <- function(VA, A, n) {
-  func <- function(i) {
-    VA - A * ((1 - (1 + i)^(-n)) / i)
-  }
-  
-  # Verifica que los límites del intervalo sean válidos (función cambia de signo)
-  lower <- 0.0001  # Evitar división por cero en el límite inferior
-  upper <- 1
-  f.lower <- func(lower)
-  f.upper <- func(upper)
-  
-  if (is.na(f.lower) || is.na(f.upper)) {
-    stop("No se puede calcular en el intervalo dado.")
-  }
-  
-  # Usar uniroot solo si los signos son diferentes
-  if (f.lower * f.upper > 0) {
-    stop("La función no cambia de signo en el intervalo dado.")
-  }
-  
-  i <- uniroot(func, c(lower, upper))$root
-  return(i)
-}
 
-# Ejemplo para tasa de interés futura
-```
-i = tasa_actual(10000, 1000, 10)
-```
