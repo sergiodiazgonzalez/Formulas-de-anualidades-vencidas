@@ -1,19 +1,21 @@
 # Formulas-de-anualidades-vencidas
-Las anualidades donde los pagos se realizan al final de cada período de pago se llaman anuaidades vecidas y su monto es el valor acumulado de una suceción de pagos iguales al final de cada pago
+Las anualidades donde los pagos se realizan al final de cada período de pago se llaman anuaidades vecidas y su monto es el valor acumulado de una suceción de pagos iguales al final de cada pago.
 ```
 source("https://raw.githubusercontent.com/sergiodiazgonzalez/Formulas-de-anualidades-vencidas/refs/heads/main/anualidadesVencidas.R")
 ```
-# 1. Valor Futuro (FV) conociendo la anualidad (A), tasa de interés (i) y número de pagos (n)
-valor_futuro = function(PMT, i, n) {
-  FV = A*(((1+i)^n -1)/i)
-  return(FV)
-}
-
-# Ejemplo
+### Cálculo de Valor futuro
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: A=$3,000 t=8 r=0.05
+Se realizan los cálculos
+```{r}
+# Creamos objetos con los valores de entrada :
+Anualidad=3000
+NumeroDeAnualidades=8
+TasaDeInteres=0.05
+# Calculamos el valor futuro
+VF=ValorFuturo(A=Anualidad,t=NumeroDeAnualidades,r=TasaDeIntereses)
+#Imprimimos el resultado:
+VF
 ```
-VF = valor_futuro(A=1000, i=0.05, n=10)
-```
-
 
 # 2. Anualidad (A) conociendo el valor futuro (FV), tasa de interés (i) y número de pagos (n)
 anualidad_futuro = function(FV, i, n) {
