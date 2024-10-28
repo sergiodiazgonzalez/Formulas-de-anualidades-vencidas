@@ -78,7 +78,7 @@ ValorActual=8000
 Anualidad=1500
 TasaDeIntereses=0.06
 # Calculamos el número de pagos
-t=NumeroDePagosValorActual(VA=ValorActual,A=Anualidad,r=TasadeIntereses)
+t=NumeroDePagosValorActual(VA=ValorActual,A=Anualidad,r=TasaDeIntereses)
 #Imprimimos el resultado:
 t
 ```
