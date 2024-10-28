@@ -29,17 +29,19 @@ A=AnualidadValorFuturo(VF=ValorFuturo,t=NumeroDeAnualidades,r=TasaDeIntereses)
 #Imprimimos el resultado:
 A
 ```
-# 3. Número de pagos (n) conociendo el valor futuro (FV), anualidad (A) y la tasa de interés (i)
-numero_pagos_futuro = function(FV, A, i) {
-  n = log((FV * i) / PMT + 1) / log(1 + i)
-  return(n)
-}
-
-# Ejemplo
+## Cálculo de Número de Pagos a plazo con valor futuro
+Para ilistrar el ejemplo, se tiene el siguiente ejercicio: VF=$40,000 A=$2,000 r=0.03
+Se realizan los cálculos
+```{r}
+# Creamos objetos con los valores de entrada:
+ValorFuturo=40000
+Anualidad=2000
+TasaDeIntereses=0.03
+# Calculamos el número de pagos
+t=NumeroDePagosValorFuturo(VF=ValorFuturo,A=Anualidad,r=TasaDeIntereses)
+#Imprimimos el resultado:
+t
 ```
-n = numero_pagos_futuro(15000, 1000, 0.05)
-```
-
 
 # 4. Tasa de interés (i) conociendo el valor futuro (FV), número de pagos (n) y la anualidad (A)
 tasa_futuro <- function(FV, A, n) {
