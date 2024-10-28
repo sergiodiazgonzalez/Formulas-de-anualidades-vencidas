@@ -55,18 +55,19 @@ VA=ValorActual(A=Anualidad,t=NumeroDeAnualidades,r=TasaDeIntereses)
 #Imprimimos el resultado:
 VA
 ```
-
-# 5. Valor actual (VA) conociendo la anualidad (A), tasa de interés (i) y número de pagos (n)
-valor_actual = function(PMT, i, n) {
-  VA = A * ((1 - (1 + i)^(-n)) / i)
-  return(PV)
-}
-
-# Ejemplo
+## Cálculo de anualidad con valor actual
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: VA=$10,000 t=5 r=0.04
+Se realizan los cálculos
+```{r}
+# Creamos objetos con los valores de entrada:
+ValorActual=10000
+NumeroDeAnualidades=5
+TasaDeIntereses=0.04
+# Calculamos la anualidad
+A=AnualidadValorActual(VA=ValorActual,t=NumeroDeAnualidades,r=TasaDeIntereses)
+#Imprimimos el resultado:
+A
 ```
-VA = valor_actual(1000, 0.05, 10)
-```
-
 
 # 6. Anualidad (A) conociendo el valor actual (VA), tasa de interés (i) y número de pagos (n)
 anualidad_actual = function(PV, i, n) {
