@@ -16,19 +16,19 @@ VF=ValorFuturo(A=Anualidad,t=NumeroDeAnualidades,r=TasaDeInteres)
 #Imprimimos el resultado:
 VF
 ```
-
-# 2. Anualidad (A) conociendo el valor futuro (FV), tasa de interés (i) y número de pagos (n)
-anualidad_futuro = function(FV, i, n) {
-  A = (FV * i) / ((1 + i)^n - 1)
-  return(PMT)
-}
-
-# Ejemplo
+## Cálculo de anualidad con valor futuro
+Para ilustrar el ejemplo, se tiene el siguiente ejercicio: VF=$50,000 t=8 r=0.04
+Se realizan los cálculos
+```{r}
+# Creamos objetos con los valores de entrada:
+ValorFuturo=50000
+NumeroDeAnualidades=8
+TasaDeIntereses=0.04
+# Calculamos la anualidad
+A=AnualidadValorFuturo(VF=ValorFuturo,t=NumeroDeAnualidades,r=TasaDeIntereses)
+#Imprimimos el resultado:
+A
 ```
-A = anualidad_futuro(15000, 0.05, 10)
-```
-
-
 # 3. Número de pagos (n) conociendo el valor futuro (FV), anualidad (A) y la tasa de interés (i)
 numero_pagos_futuro = function(FV, A, i) {
   n = log((FV * i) / PMT + 1) / log(1 + i)
